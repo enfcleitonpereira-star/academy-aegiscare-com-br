@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Acedemy Aegis Care" },
+      { name: "description", content: "Educação continuuada para cuidadores de idosos extraordinários." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Acedemy Aegis Care" },
+      { property: "og:description", content: "Educação continuuada para cuidadores de idosos extraordinários." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Acedemy Aegis Care" },
+      { name: "twitter:description", content: "Educação continuuada para cuidadores de idosos extraordinários." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/ZPv709cYpobnXryGggX52ljszki1/social-images/social-1780066456934-academy.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/ZPv709cYpobnXryGggX52ljszki1/social-images/social-1780066456934-academy.webp" },
     ],
     links: [
       {
