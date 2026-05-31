@@ -15,6 +15,7 @@ import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppModulosRouteImport } from './routes/app.modulos'
+import { Route as AppFormacaoRouteImport } from './routes/app.formacao'
 
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
@@ -46,12 +47,18 @@ const AppModulosRoute = AppModulosRouteImport.update({
   path: '/modulos',
   getParentRoute: () => AppRoute,
 } as any)
+const AppFormacaoRoute = AppFormacaoRouteImport.update({
+  id: '/formacao',
+  path: '/formacao',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRouteWithChildren
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app/': typeof AppIndexRoute
 }
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app': typeof AppIndexRoute
 }
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/app': typeof AppRouteWithChildren
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app/': typeof AppIndexRoute
 }
@@ -78,16 +87,24 @@ export interface FileRouteTypes {
     | '/app'
     | '/auth'
     | '/reset-password'
+    | '/app/formacao'
     | '/app/modulos'
     | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/reset-password' | '/app/modulos' | '/app'
+  to:
+    | '/'
+    | '/auth'
+    | '/reset-password'
+    | '/app/formacao'
+    | '/app/modulos'
+    | '/app'
   id:
     | '__root__'
     | '/'
     | '/app'
     | '/auth'
     | '/reset-password'
+    | '/app/formacao'
     | '/app/modulos'
     | '/app/'
   fileRoutesById: FileRoutesById
@@ -143,15 +160,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppModulosRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/formacao': {
+      id: '/app/formacao'
+      path: '/formacao'
+      fullPath: '/app/formacao'
+      preLoaderRoute: typeof AppFormacaoRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
 interface AppRouteChildren {
+  AppFormacaoRoute: typeof AppFormacaoRoute
   AppModulosRoute: typeof AppModulosRoute
   AppIndexRoute: typeof AppIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
+  AppFormacaoRoute: AppFormacaoRoute,
   AppModulosRoute: AppModulosRoute,
   AppIndexRoute: AppIndexRoute,
 }
