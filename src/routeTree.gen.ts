@@ -9,38 +9,264 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppVideosRouteImport } from './routes/app.videos'
+import { Route as AppSuporteRouteImport } from './routes/app.suporte'
+import { Route as AppPerfilRouteImport } from './routes/app.perfil'
+import { Route as AppModulosRouteImport } from './routes/app.modulos'
+import { Route as AppForumRouteImport } from './routes/app.forum'
+import { Route as AppFormacaoRouteImport } from './routes/app.formacao'
+import { Route as AppCertificadosRouteImport } from './routes/app.certificados'
+import { Route as AppAvaliacoesRouteImport } from './routes/app.avaliacoes'
+import { Route as AppAtividadesRouteImport } from './routes/app.atividades'
+import { Route as AppApostilasRouteImport } from './routes/app.apostilas'
+import { Route as AppAulaLessonIdRouteImport } from './routes/app.aula.$lessonId'
 
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVideosRoute = AppVideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSuporteRoute = AppSuporteRouteImport.update({
+  id: '/suporte',
+  path: '/suporte',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPerfilRoute = AppPerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppModulosRoute = AppModulosRouteImport.update({
+  id: '/modulos',
+  path: '/modulos',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppForumRoute = AppForumRouteImport.update({
+  id: '/forum',
+  path: '/forum',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFormacaoRoute = AppFormacaoRouteImport.update({
+  id: '/formacao',
+  path: '/formacao',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCertificadosRoute = AppCertificadosRouteImport.update({
+  id: '/certificados',
+  path: '/certificados',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAvaliacoesRoute = AppAvaliacoesRouteImport.update({
+  id: '/avaliacoes',
+  path: '/avaliacoes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAtividadesRoute = AppAtividadesRouteImport.update({
+  id: '/atividades',
+  path: '/atividades',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppApostilasRoute = AppApostilasRouteImport.update({
+  id: '/apostilas',
+  path: '/apostilas',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAulaLessonIdRoute = AppAulaLessonIdRouteImport.update({
+  id: '/aula/$lessonId',
+  path: '/aula/$lessonId',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/app': typeof AppRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/app/apostilas': typeof AppApostilasRoute
+  '/app/atividades': typeof AppAtividadesRoute
+  '/app/avaliacoes': typeof AppAvaliacoesRoute
+  '/app/certificados': typeof AppCertificadosRoute
+  '/app/formacao': typeof AppFormacaoRoute
+  '/app/forum': typeof AppForumRoute
+  '/app/modulos': typeof AppModulosRoute
+  '/app/perfil': typeof AppPerfilRoute
+  '/app/suporte': typeof AppSuporteRoute
+  '/app/videos': typeof AppVideosRoute
+  '/app/': typeof AppIndexRoute
+  '/app/aula/$lessonId': typeof AppAulaLessonIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/app/apostilas': typeof AppApostilasRoute
+  '/app/atividades': typeof AppAtividadesRoute
+  '/app/avaliacoes': typeof AppAvaliacoesRoute
+  '/app/certificados': typeof AppCertificadosRoute
+  '/app/formacao': typeof AppFormacaoRoute
+  '/app/forum': typeof AppForumRoute
+  '/app/modulos': typeof AppModulosRoute
+  '/app/perfil': typeof AppPerfilRoute
+  '/app/suporte': typeof AppSuporteRoute
+  '/app/videos': typeof AppVideosRoute
+  '/app': typeof AppIndexRoute
+  '/app/aula/$lessonId': typeof AppAulaLessonIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/app': typeof AppRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/app/apostilas': typeof AppApostilasRoute
+  '/app/atividades': typeof AppAtividadesRoute
+  '/app/avaliacoes': typeof AppAvaliacoesRoute
+  '/app/certificados': typeof AppCertificadosRoute
+  '/app/formacao': typeof AppFormacaoRoute
+  '/app/forum': typeof AppForumRoute
+  '/app/modulos': typeof AppModulosRoute
+  '/app/perfil': typeof AppPerfilRoute
+  '/app/suporte': typeof AppSuporteRoute
+  '/app/videos': typeof AppVideosRoute
+  '/app/': typeof AppIndexRoute
+  '/app/aula/$lessonId': typeof AppAulaLessonIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/app'
+    | '/auth'
+    | '/reset-password'
+    | '/app/apostilas'
+    | '/app/atividades'
+    | '/app/avaliacoes'
+    | '/app/certificados'
+    | '/app/formacao'
+    | '/app/forum'
+    | '/app/modulos'
+    | '/app/perfil'
+    | '/app/suporte'
+    | '/app/videos'
+    | '/app/'
+    | '/app/aula/$lessonId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/auth'
+    | '/reset-password'
+    | '/app/apostilas'
+    | '/app/atividades'
+    | '/app/avaliacoes'
+    | '/app/certificados'
+    | '/app/formacao'
+    | '/app/forum'
+    | '/app/modulos'
+    | '/app/perfil'
+    | '/app/suporte'
+    | '/app/videos'
+    | '/app'
+    | '/app/aula/$lessonId'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/app'
+    | '/auth'
+    | '/reset-password'
+    | '/app/apostilas'
+    | '/app/atividades'
+    | '/app/avaliacoes'
+    | '/app/certificados'
+    | '/app/formacao'
+    | '/app/forum'
+    | '/app/modulos'
+    | '/app/perfil'
+    | '/app/suporte'
+    | '/app/videos'
+    | '/app/'
+    | '/app/aula/$lessonId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AppRoute: typeof AppRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +274,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/videos': {
+      id: '/app/videos'
+      path: '/videos'
+      fullPath: '/app/videos'
+      preLoaderRoute: typeof AppVideosRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/suporte': {
+      id: '/app/suporte'
+      path: '/suporte'
+      fullPath: '/app/suporte'
+      preLoaderRoute: typeof AppSuporteRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/perfil': {
+      id: '/app/perfil'
+      path: '/perfil'
+      fullPath: '/app/perfil'
+      preLoaderRoute: typeof AppPerfilRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/modulos': {
+      id: '/app/modulos'
+      path: '/modulos'
+      fullPath: '/app/modulos'
+      preLoaderRoute: typeof AppModulosRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/forum': {
+      id: '/app/forum'
+      path: '/forum'
+      fullPath: '/app/forum'
+      preLoaderRoute: typeof AppForumRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/formacao': {
+      id: '/app/formacao'
+      path: '/formacao'
+      fullPath: '/app/formacao'
+      preLoaderRoute: typeof AppFormacaoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/certificados': {
+      id: '/app/certificados'
+      path: '/certificados'
+      fullPath: '/app/certificados'
+      preLoaderRoute: typeof AppCertificadosRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/avaliacoes': {
+      id: '/app/avaliacoes'
+      path: '/avaliacoes'
+      fullPath: '/app/avaliacoes'
+      preLoaderRoute: typeof AppAvaliacoesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/atividades': {
+      id: '/app/atividades'
+      path: '/atividades'
+      fullPath: '/app/atividades'
+      preLoaderRoute: typeof AppAtividadesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/apostilas': {
+      id: '/app/apostilas'
+      path: '/apostilas'
+      fullPath: '/app/apostilas'
+      preLoaderRoute: typeof AppApostilasRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/aula/$lessonId': {
+      id: '/app/aula/$lessonId'
+      path: '/aula/$lessonId'
+      fullPath: '/app/aula/$lessonId'
+      preLoaderRoute: typeof AppAulaLessonIdRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppApostilasRoute: typeof AppApostilasRoute
+  AppAtividadesRoute: typeof AppAtividadesRoute
+  AppAvaliacoesRoute: typeof AppAvaliacoesRoute
+  AppCertificadosRoute: typeof AppCertificadosRoute
+  AppFormacaoRoute: typeof AppFormacaoRoute
+  AppForumRoute: typeof AppForumRoute
+  AppModulosRoute: typeof AppModulosRoute
+  AppPerfilRoute: typeof AppPerfilRoute
+  AppSuporteRoute: typeof AppSuporteRoute
+  AppVideosRoute: typeof AppVideosRoute
+  AppIndexRoute: typeof AppIndexRoute
+  AppAulaLessonIdRoute: typeof AppAulaLessonIdRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppApostilasRoute: AppApostilasRoute,
+  AppAtividadesRoute: AppAtividadesRoute,
+  AppAvaliacoesRoute: AppAvaliacoesRoute,
+  AppCertificadosRoute: AppCertificadosRoute,
+  AppFormacaoRoute: AppFormacaoRoute,
+  AppForumRoute: AppForumRoute,
+  AppModulosRoute: AppModulosRoute,
+  AppPerfilRoute: AppPerfilRoute,
+  AppSuporteRoute: AppSuporteRoute,
+  AppVideosRoute: AppVideosRoute,
+  AppIndexRoute: AppIndexRoute,
+  AppAulaLessonIdRoute: AppAulaLessonIdRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AppRoute: AppRouteWithChildren,
+  AuthRoute: AuthRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
