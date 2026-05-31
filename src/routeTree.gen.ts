@@ -16,6 +16,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppModulosRouteImport } from './routes/app.modulos'
 import { Route as AppFormacaoRouteImport } from './routes/app.formacao'
+import { Route as AppAulaLessonIdRouteImport } from './routes/app.aula.$lessonId'
 
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
@@ -52,6 +53,11 @@ const AppFormacaoRoute = AppFormacaoRouteImport.update({
   path: '/formacao',
   getParentRoute: () => AppRoute,
 } as any)
+const AppAulaLessonIdRoute = AppAulaLessonIdRouteImport.update({
+  id: '/aula/$lessonId',
+  path: '/aula/$lessonId',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app/': typeof AppIndexRoute
+  '/app/aula/$lessonId': typeof AppAulaLessonIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app': typeof AppIndexRoute
+  '/app/aula/$lessonId': typeof AppAulaLessonIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app/': typeof AppIndexRoute
+  '/app/aula/$lessonId': typeof AppAulaLessonIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/app/formacao'
     | '/app/modulos'
     | '/app/'
+    | '/app/aula/$lessonId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/app/formacao'
     | '/app/modulos'
     | '/app'
+    | '/app/aula/$lessonId'
   id:
     | '__root__'
     | '/'
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/app/formacao'
     | '/app/modulos'
     | '/app/'
+    | '/app/aula/$lessonId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -167,6 +179,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppFormacaoRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/aula/$lessonId': {
+      id: '/app/aula/$lessonId'
+      path: '/aula/$lessonId'
+      fullPath: '/app/aula/$lessonId'
+      preLoaderRoute: typeof AppAulaLessonIdRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
@@ -174,12 +193,14 @@ interface AppRouteChildren {
   AppFormacaoRoute: typeof AppFormacaoRoute
   AppModulosRoute: typeof AppModulosRoute
   AppIndexRoute: typeof AppIndexRoute
+  AppAulaLessonIdRoute: typeof AppAulaLessonIdRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppFormacaoRoute: AppFormacaoRoute,
   AppModulosRoute: AppModulosRoute,
   AppIndexRoute: AppIndexRoute,
+  AppAulaLessonIdRoute: AppAulaLessonIdRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
