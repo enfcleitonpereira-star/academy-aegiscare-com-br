@@ -16,6 +16,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppModulosRouteImport } from './routes/app.modulos'
 import { Route as AppFormacaoRouteImport } from './routes/app.formacao'
+import { Route as AppApostilasRouteImport } from './routes/app.apostilas'
 import { Route as AppAulaLessonIdRouteImport } from './routes/app.aula.$lessonId'
 
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
@@ -53,6 +54,11 @@ const AppFormacaoRoute = AppFormacaoRouteImport.update({
   path: '/formacao',
   getParentRoute: () => AppRoute,
 } as any)
+const AppApostilasRoute = AppApostilasRouteImport.update({
+  id: '/apostilas',
+  path: '/apostilas',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppAulaLessonIdRoute = AppAulaLessonIdRouteImport.update({
   id: '/aula/$lessonId',
   path: '/aula/$lessonId',
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/app': typeof AppRouteWithChildren
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/app/apostilas': typeof AppApostilasRoute
   '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app/': typeof AppIndexRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/app/apostilas': typeof AppApostilasRoute
   '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app': typeof AppIndexRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/app': typeof AppRouteWithChildren
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/app/apostilas': typeof AppApostilasRoute
   '/app/formacao': typeof AppFormacaoRoute
   '/app/modulos': typeof AppModulosRoute
   '/app/': typeof AppIndexRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/auth'
     | '/reset-password'
+    | '/app/apostilas'
     | '/app/formacao'
     | '/app/modulos'
     | '/app/'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/reset-password'
+    | '/app/apostilas'
     | '/app/formacao'
     | '/app/modulos'
     | '/app'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/auth'
     | '/reset-password'
+    | '/app/apostilas'
     | '/app/formacao'
     | '/app/modulos'
     | '/app/'
@@ -179,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppFormacaoRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/apostilas': {
+      id: '/app/apostilas'
+      path: '/apostilas'
+      fullPath: '/app/apostilas'
+      preLoaderRoute: typeof AppApostilasRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/aula/$lessonId': {
       id: '/app/aula/$lessonId'
       path: '/aula/$lessonId'
@@ -190,6 +209,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface AppRouteChildren {
+  AppApostilasRoute: typeof AppApostilasRoute
   AppFormacaoRoute: typeof AppFormacaoRoute
   AppModulosRoute: typeof AppModulosRoute
   AppIndexRoute: typeof AppIndexRoute
@@ -197,6 +217,7 @@ interface AppRouteChildren {
 }
 
 const AppRouteChildren: AppRouteChildren = {
+  AppApostilasRoute: AppApostilasRoute,
   AppFormacaoRoute: AppFormacaoRoute,
   AppModulosRoute: AppModulosRoute,
   AppIndexRoute: AppIndexRoute,
