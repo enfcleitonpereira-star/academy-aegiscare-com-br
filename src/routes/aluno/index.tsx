@@ -6,7 +6,7 @@ import { AppShell } from "@/components/AppShell";
 import { Progress } from "@/components/ui/progress";
 import { ArrowUpRight, Clock, Award, Bell, BookOpen, TrendingUp } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/")({
+export const Route = createFileRoute("/aluno/")({
   component: Dashboard,
   head: () => ({ meta: [{ title: "Início — Aegis Care Academy" }] }),
 });

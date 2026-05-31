@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Users, BookOpen, GraduationCap, Clock } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/admin/")({
+export const Route = createFileRoute("/aluno/admin/")({
   component: AdminOverview,
 });
 

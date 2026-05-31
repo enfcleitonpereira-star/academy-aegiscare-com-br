@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { AppShell } from "@/components/AppShell";
 import { FileText, Download } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/apostilas")({
+export const Route = createFileRoute("/aluno/apostilas")({
   component: ApostilasPage,
   head: () => ({ meta: [{ title: "Apostilas — Aegis Care Academy" }] }),
 });

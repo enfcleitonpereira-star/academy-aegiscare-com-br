@@ -2,7 +2,7 @@ import { createFileRoute, Outlet, useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useAuth } from "@/hooks/use-auth";
 
-export const Route = createFileRoute("/_aluno")({
+export const Route = createFileRoute("/aluno")({
   component: AlunoLayout,
 });
 

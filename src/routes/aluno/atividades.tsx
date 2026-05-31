@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { AppShell } from "@/components/AppShell";
 import { ListChecks, CheckCircle2 } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/atividades")({
+export const Route = createFileRoute("/aluno/atividades")({
   component: AtividadesPage,
   head: () => ({ meta: [{ title: "Atividades — Aegis Care Academy" }] }),
 });

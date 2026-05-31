@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { LifeBuoy, Mail, MessageCircle } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/suporte")({
+export const Route = createFileRoute("/aluno/suporte")({
   component: SuportePage,
   head: () => ({ meta: [{ title: "Suporte — Aegis Care Academy" }] }),
 });

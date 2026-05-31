@@ -6,7 +6,7 @@ import { AppShell } from "@/components/AppShell";
 import { ArrowLeft, ArrowRight, CheckCircle2, Download } from "lucide-react";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/_aluno/aulas/$id")({
+export const Route = createFileRoute("/aluno/aulas/$id")({
   component: LessonPage,
 });
 
