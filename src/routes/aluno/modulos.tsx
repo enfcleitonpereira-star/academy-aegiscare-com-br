@@ -6,7 +6,7 @@ import { AppShell } from "@/components/AppShell";
 import { Progress } from "@/components/ui/progress";
 import { ArrowUpRight, Lock } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/modulos")({
+export const Route = createFileRoute("/aluno/modulos")({
   component: ModulesPage,
   head: () => ({ meta: [{ title: "Módulos — Aegis Care Academy" }] }),
 });

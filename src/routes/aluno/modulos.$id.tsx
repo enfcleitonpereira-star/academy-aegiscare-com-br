@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { AppShell } from "@/components/AppShell";
 import { ArrowLeft, Play, FileText, Clock } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/modulos/$id")({
+export const Route = createFileRoute("/aluno/modulos/$id")({
   component: ModuleDetail,
 });
 

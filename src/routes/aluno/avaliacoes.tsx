@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { AppShell } from "@/components/AppShell";
 import { ClipboardCheck, CheckCircle2, XCircle } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/avaliacoes")({
+export const Route = createFileRoute("/aluno/avaliacoes")({
   component: AvaliacoesPage,
   head: () => ({ meta: [{ title: "Avaliações — Aegis Care Academy" }] }),
 });

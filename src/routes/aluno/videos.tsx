@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { AppShell } from "@/components/AppShell";
 import { Play } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/videos")({
+export const Route = createFileRoute("/aluno/videos")({
   component: VideosPage,
   head: () => ({ meta: [{ title: "Vídeos — Aegis Care Academy" }] }),
 });

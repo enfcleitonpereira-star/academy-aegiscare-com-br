@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { AppShell } from "@/components/AppShell";
 import { GraduationCap } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/formacao")({
+export const Route = createFileRoute("/aluno/formacao")({
   component: FormacaoPage,
   head: () => ({ meta: [{ title: "Minha Formação — Aegis Care Academy" }] }),
 });

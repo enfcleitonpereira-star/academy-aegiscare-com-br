@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Plus, Trash2, ChevronDown, ChevronRight } from "lucide-react";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/_aluno/admin/modulos")({
+export const Route = createFileRoute("/aluno/admin/modulos")({
   component: AdminModules,
 });
 

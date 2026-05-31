@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/_aluno/perfil")({
+export const Route = createFileRoute("/aluno/perfil")({
   component: PerfilPage,
   head: () => ({ meta: [{ title: "Perfil — Aegis Care Academy" }] }),
 });

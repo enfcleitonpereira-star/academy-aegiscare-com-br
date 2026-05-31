@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { AppShell } from "@/components/AppShell";
 import { LayoutDashboard, Users, BookOpen, Megaphone } from "lucide-react";
 
-export const Route = createFileRoute("/_aluno/admin")({
+export const Route = createFileRoute("/aluno/admin")({
   component: AdminLayout,
   head: () => ({ meta: [{ title: "Administração — Aegis Care Academy" }] }),
 });

@@ -7,7 +7,7 @@ import { Check, Pause, Play } from "lucide-react";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
-export const Route = createFileRoute("/_aluno/admin/alunos")({
+export const Route = createFileRoute("/aluno/admin/alunos")({
   component: AdminStudents,
 });
 

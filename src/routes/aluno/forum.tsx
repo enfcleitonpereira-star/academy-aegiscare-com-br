@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { MessagesSquare } from "lucide-react";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/_aluno/forum")({
+export const Route = createFileRoute("/aluno/forum")({
   component: ForumPage,
   head: () => ({ meta: [{ title: "Fórum — Aegis Care Academy" }] }),
 });
