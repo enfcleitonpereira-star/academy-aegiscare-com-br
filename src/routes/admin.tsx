@@ -104,7 +104,7 @@ function Students() {
                   p.access_status === "active" ? "bg-aqua/20 text-deep" : p.access_status === "pending" ? "bg-gold/20 text-ink" : "bg-destructive/20 text-destructive"
                 }`}>{p.access_status}</span>
                 {p.access_status !== "active" && <button onClick={() => setStatus(p.user_id, "active")} className="text-xs px-3 py-1.5 rounded-full bg-ink text-white hover:bg-deep">Aprovar</button>}
-                {p.access_status !== "blocked" && <button onClick={() => setStatus(p.user_id, "blocked")} className="text-xs px-3 py-1.5 rounded-full border border-border hover:border-destructive hover:text-destructive">Bloquear</button>}
+                {p.access_status !== "suspended" && <button onClick={() => setStatus(p.user_id, "suspended")} className="text-xs px-3 py-1.5 rounded-full border border-border hover:border-destructive hover:text-destructive">Bloquear</button>}
               </div>
             </div>
           ))}
