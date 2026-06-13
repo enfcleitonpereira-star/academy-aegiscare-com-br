@@ -199,7 +199,7 @@ function Landing() {
               <a href="#formacao" className="btn-primary">
                 Conhecer a formação <ArrowUpRight className="arrow w-4 h-4" />
               </a>
-              <a href="#academy" className="btn-ghost">Acessar plataforma</a>
+              <a href="/auth" className="btn-ghost">Acessar plataforma</a>
             </div>
           </Reveal>
         </div>
