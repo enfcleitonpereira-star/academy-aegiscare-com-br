@@ -150,8 +150,9 @@ function Nav() {
             <a href="#formacao" className="hover:text-ink transition-colors">Formação</a>
             <a href="#modulos" className="hover:text-ink transition-colors">Módulos</a>
             <a href="#certificado" className="hover:text-ink transition-colors">Certificação</a>
+            <a href="/auth" className="hover:text-ink transition-colors">Central do Aluno</a>
           </nav>
-          <a href="#formacao" className="btn-primary !py-2.5 !px-5 !text-[0.82rem]">
+          <a href="/auth" className="btn-primary !py-2.5 !px-5 !text-[0.82rem]">
             Acessar plataforma <ArrowUpRight className="arrow w-4 h-4" />
           </a>
         </div>
