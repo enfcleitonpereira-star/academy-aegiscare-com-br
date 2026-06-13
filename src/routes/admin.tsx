@@ -82,7 +82,7 @@ function Students() {
     },
   });
 
-  const setStatus = async (id: string, status: "active" | "pending" | "blocked") => {
+  const setStatus = async (id: string, status: "active" | "pending" | "suspended") => {
     const { error } = await supabase.from("profiles").update({ access_status: status }).eq("user_id", id);
     if (error) toast.error(error.message);
     else { toast.success("Atualizado."); qc.invalidateQueries({ queryKey: ["admin-students"] }); qc.invalidateQueries({ queryKey: ["admin-stats"] }); }
