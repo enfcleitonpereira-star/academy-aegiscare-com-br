@@ -42,7 +42,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   }
 
   const pending = profile?.access_status === "pending";
-  const blocked = profile?.access_status === "blocked";
+  const blocked = profile?.access_status === "suspended";
 
   return (
     <div className="min-h-screen flex" style={{ background: "var(--grad-light), var(--background)" }}>

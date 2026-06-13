@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import type { Session, User } from "@supabase/supabase-js";
 
 type Role = "admin" | "student";
-type AccessStatus = "pending" | "active" | "blocked";
+type AccessStatus = "pending" | "active" | "suspended";
 
 interface Profile {
   id: string;
